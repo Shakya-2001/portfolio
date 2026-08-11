@@ -17,7 +17,7 @@ const heroData = {
 
   github: "https://github.com/Shakya-2001",
 
-  linkedin: "www.linkedin.com/in/akash-kumar-117a39202",
+  linkedin: "https://www.linkedin.com/in/akash-kumar-117a39202",
 };
 
 export default heroData;

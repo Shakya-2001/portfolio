@@ -1,101 +1,127 @@
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
-import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaArrowRight,
+  FaDownload,
+} from "react-icons/fa";
+
 import heroData from "../data/heroData";
+import profileImage from "../assets/profile.jpeg";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen bg-slate-950 text-white flex items-center relative overflow-hidden">
-      
-      {/* Background Glow */}
-      <div className="absolute w-96 h-96 bg-blue-600/20 rounded-full blur-3xl -top-20 -left-20"></div>
-      <div className="absolute w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl bottom-0 right-0"></div>
+    <section
+      id="home"
+      className="min-h-screen flex items-center bg-slate-950 text-white pt-20"
+    >
+      <div className="max-w-7xl mx-auto px-6 w-full">
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* LEFT */}
-        <motion.div
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="text-blue-400 text-lg mb-3">
-            {heroData.greeting}
-          </p>
+          {/* LEFT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            {/* Greeting */}
+            <p className="text-blue-400 text-lg font-medium mb-4">
+              {heroData.greeting}
+            </p>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-            {heroData.name}
-          </h1>
+            {/* Name */}
+            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+              {heroData.name}
+            </h1>
 
-          <div className="text-2xl md:text-3xl text-blue-400 font-semibold mt-5 h-12">
-            <TypeAnimation
-              sequence={[
-                ...heroData.roles.flatMap((role) => [role, 2000]),
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </div>
+            {/* Roles */}
+            <div className="mt-5 text-2xl md:text-3xl font-semibold">
+              <span className="text-gray-300">
+                Software Engineer
+              </span>
 
-          <p className="text-gray-400 mt-8 leading-8 max-w-xl">
-            {heroData.description}
-          </p>
-
-          <div className="flex flex-wrap gap-4 mt-10">
-
-            <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg font-semibold">
-              <FaDownload />
-              Resume
-            </button>
-
-            <button className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition px-6 py-3 rounded-lg font-semibold">
-              Projects
-            </button>
-
-          </div>
-
-          <div className="flex gap-5 mt-8 text-3xl">
-
-            <a
-              href={heroData.github}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-blue-400 transition"
-            >
-              <FaGithub />
-            </a>
-
-            <a
-              href={heroData.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-blue-400 transition"
-            >
-              <FaLinkedin />
-            </a>
-
-          </div>
-        </motion.div>
-
-        {/* RIGHT */}
-        <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex justify-center"
-        >
-          <div className="relative">
-
-            <div className="absolute inset-0 rounded-full bg-blue-500 blur-3xl opacity-40 animate-pulse"></div>
-
-            <div className="relative w-80 h-80 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-7xl font-bold shadow-2xl">
-              AK
+              <span className="text-blue-400"> → AI Engineer</span>
             </div>
 
-          </div>
-        </motion.div>
+            {/* Description */}
+            <p className="mt-6 text-gray-400 text-lg leading-8 max-w-2xl">
+              {heroData.description}
+            </p>
 
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4 mt-8">
+
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-lg font-semibold transition"
+              >
+                View Projects
+                <FaArrowRight />
+              </a>
+
+              <a
+                href={heroData.resume}
+                className="inline-flex items-center gap-2 px-6 py-3 border border-slate-700 hover:border-blue-500 rounded-lg font-semibold transition"
+              >
+                Download Resume
+                <FaDownload />
+              </a>
+
+            </div>
+
+            {/* Social Links */}
+            <div className="flex gap-5 mt-8">
+
+              <a
+                href={heroData.github}
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-400 hover:text-blue-400 text-2xl transition"
+                aria-label="GitHub"
+              >
+                <FaGithub />
+              </a>
+
+              <a
+                href={heroData.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-400 hover:text-blue-400 text-2xl transition"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin />
+              </a>
+
+            </div>
+          </motion.div>
+
+
+          {/* RIGHT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="relative">
+
+              {/* Glow */}
+              <div className="absolute -inset-4 bg-blue-500/10 rounded-full blur-3xl" />
+
+              {/* Image Container */}
+              <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-blue-500/30 shadow-2xl">
+                <img
+                  src={profileImage}
+                  alt="Akash Kumar"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

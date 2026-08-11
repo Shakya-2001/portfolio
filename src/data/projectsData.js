@@ -1,3 +1,8 @@
+import meetingAssistantImage from "../assets/projects/meeting-assistent.png";
+import dspPipelineImage from "../assets/projects/dsp-pipeline.png";
+import bikeSharingImage from "../assets/projects/bike-sharing.png";
+import statisticalLearningImage from "../assets/projects/statistical-learning.png";
+
 const projectsData = [
   {
     id: 1,
@@ -12,6 +17,7 @@ const projectsData = [
       "Docker",
       "PostgreSQL",
     ],
+    image: meetingAssistantImage,
     github: "#",
     demo: "#",
     featured: true,
@@ -29,6 +35,7 @@ const projectsData = [
       "Airflow",
       "Streamlit",
     ],
+    image: dspPipelineImage,
     github: "#",
     demo: "#",
     featured: true,
@@ -45,6 +52,7 @@ const projectsData = [
       "Pandas",
       "Matplotlib",
     ],
+    image: bikeSharingImage,
     github: "#",
     demo: "#",
     featured: false,
@@ -60,6 +68,7 @@ const projectsData = [
       "NumPy",
       "Scikit-learn",
     ],
+    image: statisticalLearningImage,
     github: "#",
     demo: "#",
     featured: false,

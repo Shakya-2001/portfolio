@@ -4,20 +4,22 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
 
-      {/* Image Placeholder */}
-      <div className="relative h-52 bg-slate-700 flex items-center justify-center">
+      {/* Project Image */}
+      <div className="relative h-56 bg-slate-700 overflow-hidden">
 
-            {project.featured && (
-                <span className="absolute top-4 right-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                    Featured
-                </span>
-            )}
+        {project.featured && (
+          <span className="absolute top-4 right-4 z-10 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+            Featured
+          </span>
+        )}
 
-            <span className="text-gray-400">
-                Screenshot Coming Soon
-            </span>
+        <img
+          src={project.image}
+          alt={`${project.title} screenshot`}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+        />
 
-       </div>
+      </div>
 
       {/* Content */}
       <div className="p-6">
