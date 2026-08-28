@@ -8,13 +8,13 @@ const contactData = [
   {
     id: 2,
     title: "LinkedIn",
-    value: "www.linkedin.com/in/akash-kumar-117a39202",
+    value: "linkedin.com/in/akash-kumar-117a39202",
     link: "https://linkedin.com/in/akash-kumar-117a39202",
   },
   {
     id: 3,
     title: "GitHub",
-    value: "https://github.com/Shakya-2001",
+    value: "github.com/Shakya-2001",
     link: "https://github.com/Shakya-2001",
   },
   {

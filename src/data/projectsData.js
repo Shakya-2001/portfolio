@@ -1,23 +1,18 @@
-import meetingAssistantImage from "../assets/projects/meeting-assistent.png";
-import dspPipelineImage from "../assets/projects/dsp-pipeline.png";
-import bikeSharingImage from "../assets/projects/bike-sharing.png";
-import statisticalLearningImage from "../assets/projects/statistical-learning.png";
-
 const projectsData = [
   {
     id: 1,
     title: "AI Meeting Assistant",
     description:
-      "An AI-powered meeting assistant that transcribes audio, generates concise summaries, and extracts action items using Whisper and transformer-based language models.",
+      "A full-stack AI application that transforms meeting recordings into actionable insights. It uses OpenAI Whisper for speech-to-text transcription and transformer-based NLP models to generate concise summaries, identify action items, and extract important meeting information. The application also provides meeting history, analytics, downloadable reports, and an AI meeting copilot for asking questions about recorded meetings.",
     technologies: [
       "Python",
       "Whisper",
       "Transformers",
+      "Streamlit",
       "FastAPI",
-      "Docker",
       "PostgreSQL",
+      "Docker",
     ],
-    image: meetingAssistantImage,
     github: "#",
     demo: "#",
     featured: true,
@@ -25,17 +20,16 @@ const projectsData = [
 
   {
     id: 2,
-    title: "DSP Production Pipeline",
+    title: "EmojiMirror",
     description:
-      "Production-ready machine learning pipeline built with FastAPI, Streamlit, PostgreSQL, Docker, and Apache Airflow.",
+      "A real-time computer vision application that detects facial landmarks and transforms a user's facial expressions into dynamic emoji-based visual effects. Built with OpenCV and dlib, the system processes webcam input in real time, detects facial features, and maps expressions to corresponding emoji overlays, demonstrating practical applications of computer vision and real-time image processing.",
     technologies: [
-      "FastAPI",
-      "Docker",
-      "PostgreSQL",
-      "Airflow",
-      "Streamlit",
+      "Python",
+      "OpenCV",
+      "dlib",
+      "Computer Vision",
+      "Machine Learning",
     ],
-    image: dspPipelineImage,
     github: "#",
     demo: "#",
     featured: true,
@@ -45,30 +39,15 @@ const projectsData = [
     id: 3,
     title: "Bike Sharing Prediction",
     description:
-      "Machine learning model that predicts bike rental demand using feature engineering and regression techniques.",
+      "A machine learning project designed to predict bike rental demand from historical usage and environmental data. The project includes data preprocessing, exploratory data analysis, feature engineering, model training, and evaluation using regression techniques. It demonstrates an end-to-end machine learning workflow for solving a real-world demand forecasting problem.",
     technologies: [
       "Python",
-      "Scikit-learn",
       "Pandas",
-      "Matplotlib",
-    ],
-    image: bikeSharingImage,
-    github: "#",
-    demo: "#",
-    featured: false,
-  },
-
-  {
-    id: 4,
-    title: "Statistical Learning",
-    description:
-      "End-to-end statistical learning project covering regression, regularization, model evaluation, and cross-validation.",
-    technologies: [
-      "Python",
       "NumPy",
       "Scikit-learn",
+      "Matplotlib",
+      "Machine Learning",
     ],
-    image: statisticalLearningImage,
     github: "#",
     demo: "#",
     featured: false,

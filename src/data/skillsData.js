@@ -6,45 +6,83 @@ const skillsData = [
     skills: [
       "Python",
       "Scikit-learn",
-      "TensorFlow",
       "PyTorch",
+      "TensorFlow",
       "Transformers",
-      "spaCy",
+      "OpenAI Whisper",
+      "NLP",
+      "Computer Vision",
     ],
   },
+
   {
     id: 2,
-    title: "Backend Development",
+    title: "Data Science",
+    icon: "📊",
+    skills: [
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "Feature Engineering",
+      "Statistical Learning",
+      "Model Evaluation",
+    ],
+  },
+
+  {
+    id: 3,
+    title: "Backend & APIs",
     icon: "⚙️",
     skills: [
       "FastAPI",
       "ASP.NET Core",
+      "C#",
       "REST APIs",
       "SQLAlchemy",
       "Flask",
+      "Streamlit",
     ],
   },
+
   {
-    id: 3,
+    id: 4,
     title: "Databases",
     icon: "🗄️",
     skills: [
       "PostgreSQL",
       "SQL Server",
       "MongoDB",
+      "SQL",
+      "Database Design",
     ],
   },
+
   {
-    id: 4,
-    title: "DevOps & Cloud",
-    icon: "☁️",
+    id: 5,
+    title: "MLOps & DevOps",
+    icon: "🚀",
     skills: [
       "Docker",
+      "Apache Airflow",
       "Git",
       "GitHub",
-      "Azure",
-      "Airflow",
       "Linux",
+      "CI/CD",
+    ],
+  },
+
+  {
+    id: 6,
+    title: "Computer Vision & Embedded",
+    icon: "👁️",
+    skills: [
+      "OpenCV",
+      "Dlib",
+      "Image Processing",
+      "Face Detection",
+      "Facial Landmarks",
+      "Embedded C",
     ],
   },
 ];

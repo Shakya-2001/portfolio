@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
-import { FaGraduationCap, FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
+import {
+  FaGraduationCap,
+  FaMapMarkerAlt,
+  FaCalendarAlt,
+} from "react-icons/fa";
 
 const EducationCard = ({ education }) => {
   return (
@@ -11,28 +15,37 @@ const EducationCard = ({ education }) => {
       whileHover={{ y: -8 }}
       className="bg-slate-800 border border-slate-700 rounded-2xl p-8 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
     >
-      <div className="flex items-center gap-3 mb-4">
-        <FaGraduationCap className="text-3xl text-blue-400" />
-        <h3 className="text-2xl font-bold">{education.degree}</h3>
+      {/* Degree */}
+      <div className="flex items-start gap-4 mb-4">
+        <div className="w-12 h-12 flex-shrink-0 rounded-xl bg-blue-500/10 flex items-center justify-center">
+          <FaGraduationCap className="text-2xl text-blue-400" />
+        </div>
+
+        <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
+          {education.degree}
+        </h3>
       </div>
 
-      <p className="text-lg text-gray-300 mb-4">
+      {/* Institution */}
+      <p className="text-lg text-blue-400 font-medium mb-4">
         {education.institution}
       </p>
 
-      <div className="flex flex-wrap gap-6 text-gray-400 text-sm mb-6">
+      {/* Location + Period */}
+      <div className="flex flex-wrap gap-5 text-gray-400 text-sm mb-6">
         <div className="flex items-center gap-2">
-          <FaMapMarkerAlt />
+          <FaMapMarkerAlt className="text-blue-400" />
           {education.location}
         </div>
 
         <div className="flex items-center gap-2">
-          <FaCalendarAlt />
+          <FaCalendarAlt className="text-blue-400" />
           {education.period}
         </div>
       </div>
 
-      <p className="text-gray-400 leading-7">
+      {/* Description */}
+      <p className="text-gray-400 leading-7 max-w-4xl">
         {education.description}
       </p>
     </motion.div>
