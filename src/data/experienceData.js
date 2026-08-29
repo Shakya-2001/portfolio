@@ -1,6 +1,7 @@
 const experienceData = [
   {
     id: 1,
+    type: "software",
     period: "Oct 2024 – Present",
     role: "Software Developer",
     company: "Capgemini",
@@ -17,6 +18,7 @@ const experienceData = [
 
   {
     id: 2,
+    type: "hardware",
     period: "Jul 2022 – Sep 2022",
     role: "Embedded Systems Intern",
     company: "Eon Infotech Ltd.",

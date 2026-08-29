@@ -4,7 +4,7 @@ const educationData = [
     degree: "MSc Artificial Intelligence Systems",
     institution: "EPITA School of Engineering",
     location: "Paris, France",
-    period: "2025 – Present",
+    period: "2026 – Present",
     description:
       "Specializing in Machine Learning, Deep Learning, Statistical Learning, MLOps, NLP, Computer Vision, and AI Systems.",
   },

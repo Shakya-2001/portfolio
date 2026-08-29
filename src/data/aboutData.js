@@ -47,11 +47,11 @@ I enjoy solving real-world problems and continuously learning new AI technologie
       label: "Years Experience",
     },
     {
-      number: "10+",
+      number: "5+",
       label: "Projects",
     },
     {
-      number: "15+",
+      number: "10+",
       label: "Technologies",
     },
     {

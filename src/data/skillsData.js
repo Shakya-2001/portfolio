@@ -67,7 +67,6 @@ const skillsData = [
       "Apache Airflow",
       "Git",
       "GitHub",
-      "Linux",
       "CI/CD",
     ],
   },
@@ -82,7 +81,6 @@ const skillsData = [
       "Image Processing",
       "Face Detection",
       "Facial Landmarks",
-      "Embedded C",
     ],
   },
 ];

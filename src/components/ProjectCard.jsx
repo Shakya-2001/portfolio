@@ -4,102 +4,302 @@ import {
   FaMicrophone,
   FaSmile,
   FaBicycle,
+  FaArrowUp,
 } from "react-icons/fa";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, index }) => {
+
   const getProjectIcon = () => {
     switch (project.title) {
       case "AI Meeting Assistant":
-        return <FaMicrophone className="text-blue-400 text-2xl" />;
+        return <FaMicrophone />;
 
       case "EmojiMirror":
-        return <FaSmile className="text-blue-400 text-2xl" />;
+        return <FaSmile />;
 
       case "Bike Sharing Prediction":
-        return <FaBicycle className="text-blue-400 text-2xl" />;
+        return <FaBicycle />;
 
       default:
         return null;
     }
   };
 
+  const getProjectType = () => {
+    switch (project.title) {
+      case "AI Meeting Assistant":
+        return "AI / NLP";
+
+      case "EmojiMirror":
+        return "Computer Vision";
+
+      case "Bike Sharing Prediction":
+        return "Machine Learning";
+
+      default:
+        return "Engineering";
+    }
+  };
+
   return (
-    <div className="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden hover:-translate-y-2 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+    <div
+      className="
+        group relative overflow-hidden
+        bg-slate-900
+        border border-slate-800
+        rounded-3xl
+        hover:border-blue-500/50
+        transition-all duration-500
+      "
+    >
 
-      <div className="p-6">
+      {/* Background decorative circle */}
+      <div
+        className="
+          absolute -right-24 -top-24
+          w-72 h-72
+          rounded-full
+          border border-blue-500/10
+          group-hover:border-blue-500/20
+          transition
+        "
+      />
 
-        {/* Project Header */}
-        <div className="flex flex-col gap-4 mb-5">
+      <div
+        className="
+          absolute -right-12 -top-12
+          w-48 h-48
+          rounded-full
+          border border-blue-500/10
+        "
+      />
 
-          {/* Featured Badge */}
+      <div className="relative z-10 p-7 md:p-10">
+
+        {/* Top row */}
+        <div className="flex items-center justify-between mb-8">
+
+          <div className="flex items-center gap-4">
+
+            {/* Project number */}
+            <span className="font-mono text-sm text-gray-600">
+              0{index + 1}
+            </span>
+
+            <div className="h-px w-8 bg-slate-700" />
+
+            {/* Type */}
+            <span className="text-xs uppercase tracking-[0.2em] text-blue-400">
+              {getProjectType()}
+            </span>
+
+          </div>
+
+          {/* Featured */}
           {project.featured && (
-            <span className="self-start bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+            <span className="text-xs font-semibold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
               Featured
             </span>
           )}
 
-          {/* Icon + Title */}
-          <div className="flex items-center gap-4">
+        </div>
 
-            <div className="w-12 h-12 flex-shrink-0 rounded-xl bg-slate-700 flex items-center justify-center">
+        {/* Main content */}
+        <div className="grid lg:grid-cols-[1fr_260px] gap-10 items-center">
+
+          {/* Left */}
+          <div>
+
+            {/* Icon */}
+            <div
+              className="
+                w-14 h-14
+                rounded-2xl
+                bg-blue-500/10
+                border border-blue-500/20
+                flex items-center justify-center
+                text-blue-400
+                text-2xl
+                mb-6
+                group-hover:bg-blue-500/15
+                group-hover:scale-105
+                transition-all duration-300
+              "
+            >
               {getProjectIcon()}
             </div>
 
-            <h3 className="text-xl md:text-2xl font-bold text-white leading-tight">
+            {/* Title */}
+            <h3
+              className="
+                text-3xl md:text-4xl
+                font-bold
+                text-white
+                group-hover:text-blue-400
+                transition-colors duration-300
+              "
+            >
               {project.title}
             </h3>
+
+            {/* Description */}
+            <p className="text-gray-400 leading-8 mt-5 max-w-3xl">
+              {project.description}
+            </p>
+
+            {/* Technologies */}
+            <div className="flex flex-wrap gap-2 mt-7">
+
+              {project.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="
+                    px-3 py-1.5
+                    rounded-lg
+                    bg-slate-800
+                    border border-slate-700
+                    text-xs
+                    text-gray-300
+                    hover:border-blue-500/40
+                    hover:text-blue-300
+                    transition
+                  "
+                >
+                  {tech}
+                </span>
+              ))}
+
+            </div>
+
+            {/* Special information */}
+            {project.title === "Bike Sharing Prediction" && (
+              <div className="mt-7 p-4 rounded-xl bg-slate-800/70 border border-slate-700">
+
+                <p className="text-xs uppercase tracking-wider text-blue-400 mb-2">
+                  Team Project · 4 Members
+                </p>
+
+                <p className="text-sm text-gray-400 leading-6">
+                  My contribution included Streamlit frontend development,
+                  Docker integration, exploratory data analysis, and model
+                  training.
+                </p>
+
+              </div>
+            )}
+
+            {/* Links */}
+            <div className="flex flex-wrap gap-5 mt-8">
+
+              {project.github && project.github !== "#" && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="
+                    flex items-center gap-2
+                    text-blue-400
+                    hover:text-blue-300
+                    font-medium
+                    transition
+                  "
+                >
+                  <FaGithub />
+                  GitHub
+                </a>
+              )}
+
+              {project.demo && project.demo !== "#" && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="
+                    flex items-center gap-2
+                    text-blue-400
+                    hover:text-blue-300
+                    font-medium
+                    transition
+                  "
+                >
+                  <FaExternalLinkAlt />
+                  Live Demo
+                </a>
+              )}
+
+            </div>
+
+          </div>
+
+          {/* Right visual */}
+          <div className="hidden lg:flex justify-center">
+
+            <div className="relative w-52 h-52">
+
+              {/* Outer ring */}
+              <div
+                className="
+                  absolute inset-0
+                  rounded-full
+                  border border-blue-500/10
+                  group-hover:border-blue-500/30
+                  transition duration-500
+                "
+              />
+
+              {/* Middle ring */}
+              <div
+                className="
+                  absolute inset-7
+                  rounded-full
+                  border border-blue-500/15
+                  group-hover:rotate-45
+                  transition duration-700
+                "
+              />
+
+              {/* Center */}
+              <div
+                className="
+                  absolute inset-16
+                  rounded-2xl
+                  bg-slate-800
+                  border border-slate-700
+                  flex items-center justify-center
+                  text-blue-400
+                  text-3xl
+                  group-hover:scale-110
+                  transition duration-500
+                "
+              >
+                {getProjectIcon()}
+              </div>
+
+              {/* Arrow */}
+              <div
+                className="
+                  absolute right-2 bottom-5
+                  w-9 h-9
+                  rounded-full
+                  bg-blue-500/10
+                  border border-blue-500/20
+                  flex items-center justify-center
+                  text-blue-400
+                  opacity-0
+                  group-hover:opacity-100
+                  transition
+                "
+              >
+                <FaArrowUp className="rotate-45 text-xs" />
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
-        {/* Description */}
-        <p className="text-gray-400 leading-7 mb-6">
-          {project.description}
-        </p>
-
-        {/* Technology Tags */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 rounded-full bg-slate-700 text-sm text-blue-300 border border-slate-600"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-slate-700 mb-5"></div>
-
-        {/* Buttons */}
-        <div className="flex flex-wrap items-center gap-5">
-
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition font-medium"
-          >
-            <FaGithub />
-            GitHub
-          </a>
-
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition font-medium"
-          >
-            <FaExternalLinkAlt />
-            Demo
-          </a>
-
-        </div>
-
       </div>
-
     </div>
   );
 };

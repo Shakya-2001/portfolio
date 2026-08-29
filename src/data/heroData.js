@@ -11,9 +11,7 @@ const heroData = {
   ],
 
   description:
-    "Building production-ready AI systems using Python, FastAPI, Docker, PostgreSQL, Machine Learning, Large Language Models and MLOps.",
-
-  resume: "#",
+    "Building production-ready AI systems using Python, Machine Learning, Large Language Models, FastAPI, Docker, PostgreSQL, and MLOps.",
 
   github: "https://github.com/Shakya-2001",
 
