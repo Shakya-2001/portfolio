@@ -103,7 +103,7 @@ const Contact = () => {
             </h2>
 
             <p className="text-gray-400 text-lg leading-8 max-w-2xl mt-6">
-              I'm currently looking for AI and Machine Learning
+              I'm currently looking for AI, Machine Learning, DataScience, NLP and MLOps-related internship/job
               opportunities in France. If you're working on an interesting
               problem, building an AI product, or simply want to connect,
               I'd love to hear from you.

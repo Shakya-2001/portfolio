@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   FaGithub,
   FaLinkedin,
@@ -15,6 +16,17 @@ import heroData from "../data/heroData";
 import profileImage from "../assets/profile.jpeg";
 
 const Hero = () => {
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((currentIndex) => {
+        return (currentIndex + 1) % heroData.roles.length;
+      });
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section
       id="home"
@@ -84,9 +96,20 @@ const Hero = () => {
               <div className="flex items-center gap-3 mt-2">
                 <div className="h-px w-10 bg-blue-500" />
 
-                <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-blue-400">
-                  → AI Engineer
-                </span>
+                <div className="relative h-10 overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={heroData.roles[roleIndex]}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.4 }}
+                      className="block text-xl sm:text-2xl md:text-3xl font-semibold text-blue-400 whitespace-nowrap"
+                    >
+                      → {heroData.roles[roleIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
               </div>
             </div>
 
@@ -143,35 +166,6 @@ const Hero = () => {
               >
                 Download Resume
                 <FaDownload />
-              </a>
-
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-5 mt-8">
-
-              <span className="text-sm text-gray-500">
-                Connect with me
-              </span>
-
-              <a
-                href={heroData.github}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-                className="text-gray-400 hover:text-blue-400 text-2xl transition-colors"
-              >
-                <FaGithub />
-              </a>
-
-              <a
-                href={heroData.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                className="text-gray-400 hover:text-blue-400 text-2xl transition-colors"
-              >
-                <FaLinkedin />
               </a>
 
             </div>

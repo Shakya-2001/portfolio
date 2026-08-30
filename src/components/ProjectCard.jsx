@@ -17,7 +17,7 @@ const ProjectCard = ({ project, index }) => {
       case "EmojiMirror":
         return <FaSmile />;
 
-      case "Bike Sharing Prediction":
+      case "Bike Sharing Demand Prediction":
         return <FaBicycle />;
 
       default:
@@ -33,7 +33,7 @@ const ProjectCard = ({ project, index }) => {
       case "EmojiMirror":
         return "Computer Vision";
 
-      case "Bike Sharing Prediction":
+      case "Bike Sharing Demand Prediction":
         return "Machine Learning";
 
       default:
@@ -105,7 +105,7 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Main content */}
-        <div className="grid lg:grid-cols-[1fr_260px] gap-10 items-center">
+        <div>
 
           {/* Left */}
           <div>
@@ -226,72 +226,6 @@ const ProjectCard = ({ project, index }) => {
                   Live Demo
                 </a>
               )}
-
-            </div>
-
-          </div>
-
-          {/* Right visual */}
-          <div className="hidden lg:flex justify-center">
-
-            <div className="relative w-52 h-52">
-
-              {/* Outer ring */}
-              <div
-                className="
-                  absolute inset-0
-                  rounded-full
-                  border border-blue-500/10
-                  group-hover:border-blue-500/30
-                  transition duration-500
-                "
-              />
-
-              {/* Middle ring */}
-              <div
-                className="
-                  absolute inset-7
-                  rounded-full
-                  border border-blue-500/15
-                  group-hover:rotate-45
-                  transition duration-700
-                "
-              />
-
-              {/* Center */}
-              <div
-                className="
-                  absolute inset-16
-                  rounded-2xl
-                  bg-slate-800
-                  border border-slate-700
-                  flex items-center justify-center
-                  text-blue-400
-                  text-3xl
-                  group-hover:scale-110
-                  transition duration-500
-                "
-              >
-                {getProjectIcon()}
-              </div>
-
-              {/* Arrow */}
-              <div
-                className="
-                  absolute right-2 bottom-5
-                  w-9 h-9
-                  rounded-full
-                  bg-blue-500/10
-                  border border-blue-500/20
-                  flex items-center justify-center
-                  text-blue-400
-                  opacity-0
-                  group-hover:opacity-100
-                  transition
-                "
-              >
-                <FaArrowUp className="rotate-45 text-xs" />
-              </div>
 
             </div>
 
