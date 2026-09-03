@@ -94,7 +94,6 @@ const Hero = () => {
               </h2>
 
               <div className="flex items-center gap-3 mt-2">
-                <div className="h-px w-10 bg-blue-500" />
 
                 <div className="relative h-10 overflow-hidden">
                   <AnimatePresence mode="wait">
