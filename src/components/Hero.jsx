@@ -160,8 +160,8 @@ const Hero = () => {
               </a>
 
               <a
-                href="/Akash_Kumar_Resume_2026.pdf"
-                download="Akash_Kumar_Resume_2026.pdf"
+                href="/Akash_Resume.pdf"
+                download="Akash_Resume.pdf"
                 className="inline-flex justify-center items-center gap-3 px-6 py-3.5 border border-slate-700 bg-slate-900/50 hover:border-blue-500 hover:bg-slate-800 rounded-xl font-semibold transition-all duration-300"
               >
                 Download Resume
