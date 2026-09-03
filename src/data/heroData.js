@@ -4,9 +4,9 @@ const heroData = {
   name: "Akash Kumar",
 
   roles: [
-    "AI Engineer",
-    "Machine Learning Engineer",
-    "LLM Developer",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Large Language Models",
     "Former Software Developer",
   ],
 
